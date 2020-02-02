@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Vincent van der Walt",
+  "classifications": ["Library", "Console", "Benchmark", "DotNetCore", "C#8"],
+  "identity": "DotNetCore3.Algorithm.Experiment",
+  "name": "Algorithm Experiment using DotNetCore3",
+  "shortName": "algorithm.DotNetCore3",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "ExperimentName": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "SampleExperiment",
+      "fileRename": "SampleExperiment",
+      "description": "The name of the algorithm experiment (Singular, PascalCasing)",
+      "isRequired": true
+    },
+    "LowerCaseExperimentName": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "ExperimentName",
+        "toLower": true
+      },
+      "replaces": "sampleExperiment"
+    }
+  }
+}
