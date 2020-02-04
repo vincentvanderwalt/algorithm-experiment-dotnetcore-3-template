@@ -45,7 +45,7 @@ If you don't build in Release mode BenchmarkDotNet will throw exceptions.
 
 for example, I have a project called `SumOfTwoIntegers`
 
-You'll get the console here
+I'll get the console here
 
 ```sh
 SumOfTwoIntegers\Src\SumOfTwoIntegers.Console\bin\Release\netcoreapp3.1\SumOfTwoIntegers.exe
