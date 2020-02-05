@@ -17,8 +17,8 @@ namespace SampleExperimentLib
 
         public IEnumerable<object[]> BenchmarkData()
         {
-            yield return new object[] { new int[] { 2, 1, 5, 1, 3, 2 }, 3 };
-            yield return new object[] { GetRandomRange(10), 3 };
+            yield return new object[] { GetRandomInt(), GetRandomInt() };
+            yield return new object[] { GetRandomInt(), GetRandomInt() };
         }
 
         private int[] GetRandomRange(int numberOfItems, int minValue = 0, int maxValue = 100)
