@@ -6,6 +6,7 @@ namespace SampleExperimentLib
 {
     public class SampleExperiment1
     {
+        private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
         private Random random = new Random();
 
         [Benchmark]
@@ -19,6 +20,18 @@ namespace SampleExperimentLib
         {
             yield return new object[] { GetRandomInt(), GetRandomInt() };
             yield return new object[] { GetRandomInt(), GetRandomInt() };
+        }
+
+        private string GetRandomString(int numberOfCharacters)
+        {
+
+            var result = string.Empty;
+
+            for (int i = 0; i < numberOfCharacters; i++)
+            {
+                result += alphabet[random.Next(26)];
+            }
+            return result;
         }
 
         private int[] GetRandomRange(int numberOfItems, int minValue = 0, int maxValue = 100)
