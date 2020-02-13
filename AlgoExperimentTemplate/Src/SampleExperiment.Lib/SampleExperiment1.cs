@@ -34,14 +34,22 @@ namespace SampleExperimentLib
             return result;
         }
 
-        private int[] GetRandomRange(int numberOfItems, int minValue = 0, int maxValue = 100)
+        private int[] GetRandomRange(int numberOfItems, int minValue = 0, int maxValue = 100, bool distinctValues = true)
         {
             int[] result = new int[numberOfItems];
 
             for (int i = 0; i < numberOfItems; i++)
             {
-                result[i] = random.Next(minValue, maxValue);
+                var item = random.Next(minValue, maxValue);
+
+                while (result.Contains(item) && distinctValues)
+                {
+                    item = random.Next(minValue, maxValue);
+                }
+                result[i] = item;
             }
+
+            Array.Sort(result);
 
             return result;
         }
